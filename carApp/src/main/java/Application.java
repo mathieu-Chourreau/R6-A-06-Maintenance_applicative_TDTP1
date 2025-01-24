@@ -1,14 +1,20 @@
 public class Application {
-    public static void main(String[] args) {
-        Voiture maVoiture = new Voiture("Sedan", "Bleu");
-        Conducteur moi = new Conducteur("John", 20);
 
-        moi.demarrerVoiture(maVoiture);
-        maVoiture.accelerer();
-        moi.changerVitesse(maVoiture, 80);
-        maVoiture.ralentir();
-        moi.changerVitesse(maVoiture,30);
-        moi.arreterVoiture(maVoiture);
-        System.out.println("fini");
+    /**
+     * Programme principal.
+     * @param args
+     */
+
+    public static void main(final String[] args) {
+        Car myCar = new Car("Sedan", "Bleu");
+        Conducteur mySelf = new Conducteur("John", 20);
+
+        mySelf.demarrerVoiture(myCar);
+        myCar.accelerer();
+        mySelf.changerVitesse(myCar, 80);
+        myCar.ralentir();
+        mySelf.changerVitesse(myCar, 30);
+        mySelf.arreterVoiture(myCar);
+        System.out.println("Fini");
     }
 }
