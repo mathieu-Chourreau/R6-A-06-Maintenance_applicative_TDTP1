@@ -7,12 +7,12 @@ public class Application {
 
     public static void main(final String[] args) {
         Car myCar = new Car("Sedan", "Bleu");
-        Conducteur mySelf = new Conducteur("John", 20);
+        Conductor mySelf = new Conductor("John", 20);
 
         mySelf.demarrerVoiture(myCar);
-        myCar.accelerer();
+        myCar.accelerate();
         mySelf.changerVitesse(myCar, 80);
-        myCar.ralentir();
+        myCar.slowDown();
         mySelf.changerVitesse(myCar, 30);
         mySelf.arreterVoiture(myCar);
         System.out.println("Fini");

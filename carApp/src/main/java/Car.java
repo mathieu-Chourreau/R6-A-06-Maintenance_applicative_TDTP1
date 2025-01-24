@@ -1,16 +1,49 @@
 public class Car {
-    public static final int maxSpeed = 120;
-    private String model;
-    private String color;
-    private int speed;
 
     /**
-     * Class voiture
-     * @param model
-     * @param color
+     * @param MAXSPEED - The maximum speed the car can reach.
+     */
+    public static final int MAXSPEED = 120;
+
+    /**
+     * @param STEEPSPEED - The speed reduction when the car slows down.
+     */
+    public static final int STEEPSPEED = 10;
+
+    /**
+     * @param warningMessageMaxSpeed - Warning message for maximum speed.
      */
 
-    public Car(String model, String color) {
+    public static final String WARNINGMESSAGEMAXSPEED = "Maximum speed has been reached.";
+
+    /**
+     * @param warningMessageCarAlreadyStop - Warning message.
+     */
+    public static final String WARNINGMESSAGECARALREADYSTOP = "The car has already stopped.";
+
+    /**
+     * @param model - The model of the car.
+     */
+    private final String model;
+
+    /**
+     * @param color - The color of the car.
+     */
+    private final String color;
+
+    /**
+     * @param speed - The current speed of the car.
+     */
+    private int speed;
+
+
+    /**
+     * Class voiture.
+     * @param model - Car model
+     * @param color - Car color
+     */
+
+    public Car(final String model, final String color) {
         this.model = model;
         this.color = color;
         this.speed = 0;
@@ -20,27 +53,27 @@ public class Car {
         return this.speed;
     }
 
-    public void accelerer() {
-        if (speed + 10 <= maxSpeed) {
-            speed += 10;
+    public void accelerate() {
+        if (speed + STEEPSPEED <= MAXSPEED) {
+            speed += STEEPSPEED;
             // afficher détails
             System.out.println("Modèle : " + model);
             System.out.println("Couleur : " + color);
             System.out.println("Vitesse actuelle : " + speed);
         } else {
-            System.out.println("La vitesse maximale est atteinte.");
+            System.out.println(WARNINGMESSAGEMAXSPEED);
         }
     }
 
-    public void ralentir() {
-        if (speed - 10 >= 0) {
-            speed -= 10;
+    public void slowDown() {
+        if (speed - STEEPSPEED >= 0) {
+            speed -= STEEPSPEED;
             // afficher détails
             System.out.println("Modèle : " + model);
             System.out.println("Couleur : " + color);
             System.out.println("Vitesse actuelle : " + speed);
         } else {
-            System.out.println("La voiture est déjà à l'arrêt.");
+            System.out.println(WARNINGMESSAGECARALREADYSTOP);
         }
     }
 }
