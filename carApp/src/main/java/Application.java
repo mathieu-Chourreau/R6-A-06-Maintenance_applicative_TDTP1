@@ -9,12 +9,12 @@ public class Application {
         Car myCar = new Car("Sedan", "Bleu");
         Conductor mySelf = new Conductor("John", 20);
 
-        mySelf.demarrerVoiture(myCar);
+        mySelf.startCar(myCar);
         myCar.accelerate();
-        mySelf.changerVitesse(myCar, 80);
+        mySelf.changeSpeed(myCar, 80);
         myCar.slowDown();
-        mySelf.changerVitesse(myCar, 30);
-        mySelf.arreterVoiture(myCar);
+        mySelf.changeSpeed(myCar, 30);
+        mySelf.stopCar(myCar);
         System.out.println("Fini");
     }
 }
